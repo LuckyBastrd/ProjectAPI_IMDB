@@ -1,0 +1,2 @@
+D:\Kuliah\Project\ProjectAPI_IMDB\ProjectAPI_IMDB\obj\Debug\ProjectAPI_IMDB.csproj.AssemblyReference.cache
+D:\Kuliah\Project\ProjectAPI_IMDB\ProjectAPI_IMDB\obj\Debug\ProjectAPI_IMDB.csproj.CoreCompileInputs.cache
