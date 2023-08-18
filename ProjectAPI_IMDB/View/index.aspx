@@ -30,21 +30,27 @@
 
         <div class="container justify-content-center mt-5" id="boxId"  runat="server">
             <div class="row justify-content-center">
-                <div class="col-md-6 border border-white p-4 d-flex">
+                <div class="col-md-5 border border-white p-4 d-flex justify-content-center align-items-center">
 
                     <div class="mr-3">
                         <asp:Label ID="posterLabel" runat="server" Text=""></asp:Label>
                     </div>
 
                     <div class="d-flex flex-column justify-content-center ml-5" style="margin-left: 32px;">
-                        <p id="movieTitle" class="fw-bold text-primary fs-4 mb-3">TITLE: </p>
-                        <asp:Label ID="titleLabel" runat="server" CssClass="text-light" EnableViewState="false"></asp:Label>
+                        <div class="d-flex">
+                            <p id="movieTitle" class="fw-bold text-primary fs-4 mb-3 me-3">TITLE: </p>
+                            <asp:Label ID="titleLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
+                        </div>
+                        
+                        <div class="d-flex">
+                             <p id="movieYear" class="fw-bold text-primary fs-4 mb-3 me-3">YEAR: </p>
+                            <asp:Label ID="yearLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
+                        </div>
 
-                        <p id="movieYear" class="fw-bold text-primary fs-4 mb-3">YEAR: </p>
-                        <asp:Label ID="yearLabel" runat="server" CssClass="text-light" EnableViewState="false"></asp:Label>
-
-                        <p id="movieDuration" class="fw-bold text-primary fs-4 mb-3">DURATION: </p>
-                        <asp:Label ID="durationLabel" runat="server" CssClass="text-light" EnableViewState="false"></asp:Label>
+                        <div class="d-flex">
+                            <p id="movieDuration" class="fw-bold text-primary fs-4 mb-3 me-3">DURATION: </p>
+                            <asp:Label ID="durationLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
+                        </div>
                     </div>
 
                 </div>

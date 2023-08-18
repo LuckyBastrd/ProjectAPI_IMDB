@@ -13,7 +13,7 @@ namespace ProjectAPI_IMDB.View
 {
     public partial class index : System.Web.UI.Page
     {
-        protected async void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
