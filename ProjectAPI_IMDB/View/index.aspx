@@ -33,7 +33,7 @@
                 <div class="col-md-6 border border-white p-4 d-flex">
 
                     <div class="mr-3">
-                        <img id="posterId" runat="server" src="placeholder_image_url.jpg" alt="Image" class="img-fluid" style="max-width: 140px; max-height: 220px;">
+                        <asp:Label ID="posterLabel" runat="server" Text=""></asp:Label>
                     </div>
 
                     <div class="d-flex flex-column justify-content-center ml-5" style="margin-left: 32px;">
