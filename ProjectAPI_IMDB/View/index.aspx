@@ -5,12 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movie Details</title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body class="bg-dark">
     <form runat="server">
 
+        <%--WEBSITE TITLE--%>
         <div class="container text-center">
             <h1 class="pt-5 mb-0 fw-bold text-light">
                 Movie
@@ -20,7 +21,8 @@
             </h1>
             <p class="fw-bold text-secondary">USING IMDB API</p>
         </div>
-    
+        
+        <%--SEARCH BOX AND SEARCH BUTTON--%>
         <div class="container d-flex justify-content-center mt-5 col-md-6">
             <div class="input-group">
                 <input id="SearchInput" runat="server" type="text" class="form-control" placeholder="Search Movie Title..."/>
@@ -28,6 +30,7 @@
             </div>
         </div>
 
+        <%--BOX FOR THE CONTENT--%>
         <div class="container justify-content-center mt-5" id="boxId"  runat="server">
             <div class="row justify-content-center">
                 <div class="col-md-5 border border-white p-4 d-flex justify-content-center align-items-center">
