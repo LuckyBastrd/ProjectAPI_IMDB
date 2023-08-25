@@ -50,7 +50,7 @@
                             <asp:Label ID="yearLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
                         </div>
 
-                        <div class="d-flex" id="duarationId"  runat="server">
+                        <div class="d-flex" id="durationId"  runat="server">
                             <p id="movieDuration" class="fw-bold text-primary fs-4 mb-3 me-3">DURATION: </p>
                             <asp:Label ID="durationLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
                         </div>
@@ -59,6 +59,7 @@
                             <p id="seriesEpisodes" class="fw-bold text-primary fs-4 mb-3 me-3">EPISODES: </p>
                             <asp:Label ID="episodesLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
                         </div>
+
                     </div>
 
                 </div>
