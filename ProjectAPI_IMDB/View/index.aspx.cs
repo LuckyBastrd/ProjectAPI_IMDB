@@ -20,6 +20,7 @@ namespace ProjectAPI_IMDB.View
             if (!IsPostBack)
             {
                 boxId.Visible = false;
+                statusId.Visible = false;
             }
         }
 
@@ -37,34 +38,42 @@ namespace ProjectAPI_IMDB.View
 
                     if (apiResponse.TryGetValue("results", out var results))
                     {
-                        durationId.Visible = true;
                         episodesId.Visible = true;
 
                         if (results is JArray resultsArray && resultsArray.Count > 0)
                         {
                             JObject firstData = (JObject)resultsArray[0];
 
-                            string Poster = firstData["image"]?["url"]?.Value<string>() ?? "../Image/Sign_in_with_IMDb_-_IMDb.png";
-                            string Title = firstData["title"]?.Value<string>() ?? "Data Unavailable";
-                            string Year = firstData["year"]?.Value<string>() ?? "Data Unavailable";
-                            string Duration = firstData["runningTimeInMinutes"]?.Value<string>() ?? "Data Unavailable";
-                            string Episode = firstData["numberOfEpisodes"]?.Value<String>() ?? "Data Unavailable";
-
                             string type = firstData["titleType"]?.Value<String>();
 
-                            if(type == "movie" || type == "video" || type == "tvMovie")
+                            if (type == "movie" || type == "video" || type == "tvMovie" || type == "tvSeries")
                             {
-                                episodesId.Visible = false;
-                            } else if(type == "tvSeries")
-                            {
-                                durationId.Visible = false;
+                                statusId.Visible = false;
+
+                                string Poster = firstData["image"]?["url"]?.Value<string>() ?? "../Image/Sign_in_with_IMDb_-_IMDb.png";
+                                string Title = firstData["title"]?.Value<string>() ?? "Data Unavailable";
+                                string Year = firstData["year"]?.Value<string>() ?? "Data Unavailable";
+                                string Duration = firstData["runningTimeInMinutes"]?.Value<string>() ?? "Data Unavailable";
+                                string Episode = firstData["numberOfEpisodes"]?.Value<String>() ?? "Data Unavailable";
+
+                                if (type == "movie" || type == "video" || type == "tvMovie")
+                                {
+                                    episodesId.Visible = false;
+                                }
+
+                                posterLabel.Text = $"<img src='{Poster}' width='160' height='240' />";
+                                typeLabel.Text = type;
+                                titleLabel.Text = Title;
+                                yearLabel.Text = Year;
+                                durationLabel.Text = Duration;
+                                episodesLabel.Text = Episode;
                             }
 
-                            posterLabel.Text = $"<img src='{Poster}' width='140' height='220' />";
-                            titleLabel.Text = Title;
-                            yearLabel.Text = Year;
-                            durationLabel.Text = Duration;
-                            episodesLabel.Text = Episode;
+                            else
+                            {
+                                boxId.Visible = false;
+                                statusId.Visible = true;
+                            }
                         }
                     }
                 }

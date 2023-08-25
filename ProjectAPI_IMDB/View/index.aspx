@@ -30,6 +30,13 @@
             </div>
         </div>
 
+        <%--STATUS LABEL--%>
+        <div class="container text-center" id="statusId"  runat="server">
+            <h3 class="pt-5 mb-0 fw-bold text-light">
+                Data Not Found
+            </h3>
+        </div>
+        
         <%--BOX FOR THE CONTENT--%>
         <div class="container justify-content-center mt-5" id="boxId"  runat="server">
             <div class="row justify-content-center">
@@ -40,6 +47,11 @@
                     </div>
 
                     <div class="d-flex flex-column justify-content-center ml-5" style="margin-left: 32px;">
+                        <div class="d-flex">
+                            <p id="movieType" class="fw-bold text-primary fs-4 mb-3 me-3">TYPE: </p>
+                            <asp:Label ID="typeLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
+                        </div>
+
                         <div class="d-flex">
                             <p id="movieTitle" class="fw-bold text-primary fs-4 mb-3 me-3">TITLE: </p>
                             <asp:Label ID="titleLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
@@ -59,7 +71,6 @@
                             <p id="seriesEpisodes" class="fw-bold text-primary fs-4 mb-3 me-3">EPISODES: </p>
                             <asp:Label ID="episodesLabel" runat="server" CssClass="text-light fs-4 mb-3" EnableViewState="false"></asp:Label>
                         </div>
-
                     </div>
 
                 </div>

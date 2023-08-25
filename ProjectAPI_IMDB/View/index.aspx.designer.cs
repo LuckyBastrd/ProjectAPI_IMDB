@@ -33,6 +33,15 @@ namespace ProjectAPI_IMDB.View
         protected global::System.Web.UI.WebControls.Button SearchButton;
 
         /// <summary>
+        /// statusId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl statusId;
+
+        /// <summary>
         /// boxId control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace ProjectAPI_IMDB.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label posterLabel;
+
+        /// <summary>
+        /// typeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label typeLabel;
 
         /// <summary>
         /// titleLabel control.
