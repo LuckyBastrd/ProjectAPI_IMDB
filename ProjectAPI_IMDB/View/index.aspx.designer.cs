@@ -69,6 +69,15 @@ namespace ProjectAPI_IMDB.View
         protected global::System.Web.UI.WebControls.Label yearLabel;
 
         /// <summary>
+        /// duarationId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl duarationId;
+
+        /// <summary>
         /// durationLabel control.
         /// </summary>
         /// <remarks>
@@ -76,5 +85,23 @@ namespace ProjectAPI_IMDB.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label durationLabel;
+
+        /// <summary>
+        /// episodesId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl episodesId;
+
+        /// <summary>
+        /// episodesLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label episodesLabel;
     }
 }
