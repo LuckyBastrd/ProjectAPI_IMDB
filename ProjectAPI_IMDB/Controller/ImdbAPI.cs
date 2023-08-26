@@ -36,7 +36,7 @@ namespace ProjectAPI_IMDB.Controller
                 var responseBody = await response.Content.ReadAsStringAsync();
                 var apiResponse = JObject.Parse(responseBody);
 
-                System.Diagnostics.Debug.WriteLine(apiResponse.ToString());
+                //System.Diagnostics.Debug.WriteLine(apiResponse.ToString());
 
                 if (!string.IsNullOrEmpty(apiResponse.ToString()))
                 {

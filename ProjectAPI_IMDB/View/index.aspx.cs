@@ -14,7 +14,6 @@ namespace ProjectAPI_IMDB.View
 {
     public partial class index : System.Web.UI.Page
     {
-        private readonly ImdbAPI _imdbAPI = new ImdbAPI();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,59 +29,46 @@ namespace ProjectAPI_IMDB.View
 
             if (!string.IsNullOrWhiteSpace(query))
             {
-                JObject apiResponse = await _imdbAPI.getImdbApiData(query);
+                storeData dataStore = new storeData();
+                List<MovieData> movieDataList = await dataStore.getMovieData(query);
 
-                if (apiResponse != null)
+                MovieData movieData = movieDataList.FirstOrDefault();
+
+                if (movieData.status)
                 {
+                    statusId.Visible = false;
                     boxId.Visible = true;
+                    episodesId.Visible = true;
 
-                    if (apiResponse.TryGetValue("results", out var results))
+                    if (!movieData.checkTvSeries)
                     {
-                        episodesId.Visible = true;
-
-                        if (results is JArray resultsArray && resultsArray.Count > 0)
-                        {
-                            JObject firstData = (JObject)resultsArray[0];
-
-                            string type = firstData["titleType"]?.Value<String>();
-
-                            if (type == "movie" || type == "video" || type == "tvMovie" || type == "tvSeries")
-                            {
-                                statusId.Visible = false;
-
-                                string Poster = firstData["image"]?["url"]?.Value<string>() ?? "../Image/Sign_in_with_IMDb_-_IMDb.png";
-                                string Title = firstData["title"]?.Value<string>() ?? "Data Unavailable";
-                                string Year = firstData["year"]?.Value<string>() ?? "Data Unavailable";
-                                string Duration = firstData["runningTimeInMinutes"]?.Value<string>() ?? "Data Unavailable";
-                                string Episode = firstData["numberOfEpisodes"]?.Value<String>() ?? "Data Unavailable";
-
-                                if (type == "movie" || type == "video" || type == "tvMovie")
-                                {
-                                    episodesId.Visible = false;
-                                }
-
-                                posterLabel.Text = $"<img src='{Poster}' width='160' height='240' />";
-                                typeLabel.Text = type;
-                                titleLabel.Text = Title;
-                                yearLabel.Text = Year;
-                                durationLabel.Text = Duration;
-                                episodesLabel.Text = Episode;
-                            }
-
-                            else
-                            {
-                                boxId.Visible = false;
-                                statusId.Visible = true;
-                            }
-                        }
+                        episodesId.Visible = false;
                     }
+
+                    posterLabel.Text = $"<img src='{movieData.Poster}' width='160' height='240' />";
+                    titleLabel.Text = movieData.Title;
+                    yearLabel.Text = movieData.Year;
+                    durationLabel.Text = movieData.Duration;
+                    episodesLabel.Text = movieData.Episode;
+                }
+
+                else
+                {
+                    boxId.Visible = false;
+                    statusId.Visible = true;
                 }
             }
 
             else
             {
                 boxId.Visible = false;
+                statusId.Visible = true;
             }
+        }
+
+        protected void detailsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
