@@ -40,6 +40,9 @@ namespace ProjectAPI_IMDB.View
                     boxId.Visible = true;
                     episodesId.Visible = true;
 
+                    string movieId = movieData.Id;
+                    Application["movieId"] = movieId;
+
                     if (!movieData.checkTvSeries)
                     {
                         episodesId.Visible = false;
@@ -68,7 +71,11 @@ namespace ProjectAPI_IMDB.View
 
         protected void detailsButton_Click(object sender, EventArgs e)
         {
+            string movieId = Application["movieId"].ToString();
 
+            string imdb = $"https://www.imdb.com{movieId}";
+
+            Response.Redirect(imdb);
         }
     }
 }

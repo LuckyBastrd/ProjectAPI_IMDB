@@ -35,7 +35,7 @@ namespace ProjectAPI_IMDB.Controller
                         {
                             status = checkAllType(type),
                             checkTvSeries = checkTvSeries(type),
-                            Id = firstData["id"]?.Value<string>() ?? "Data Unavailable",
+                            Id = firstData["id"]?.Value<string>(),
                             Poster = firstData["image"]?["url"]?.Value<string>() ?? "../Image/Sign_in_with_IMDb_-_IMDb.png",
                             Title = firstData["title"]?.Value<string>() ?? "Data Unavailable",
                             Year = firstData["year"]?.Value<string>() ?? "Data Unavailable",
