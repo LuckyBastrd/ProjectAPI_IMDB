@@ -1,10 +1,12 @@
 # IMDB API Movie Data Project
 
-This is a small project created by Rafi and Niko to explore and showcase our knowledge of working with APIs by utilizing the IMDB API from [RapidAPI](https://rapidapi.com/). The main goal of this project is to retrieve movie data and integrate it into a simple website.
+This IMDB API Integration Project is a collaborative endeavor undertaken by Rafi and Niko. This project serves as an exploratory venture, showcasing our adeptness in working with APIs by harnessing the power of the IMDB API from RapidAPI. Our primary objective is to leverage this API to retrieve comprehensive movie data and seamlessly integrate it into a user-friendly website.
 
 ## Introduction
 
-In this project, we utilize the IMDB API from RapidAPI to fetch movie data. This API provides detailed information about movies, including movie type, titles, release dates, durations and episodes. By incorporating this API into our project, we aim to learn how to use APIs for our website.
+By utilizing the IMDB API available on RapidAPI, our project demonstrates a proficient use of APIs. This API provides detailed information about movies, including movie type, titles, release dates, durations and episodes. Our implementation of the API underscores our determination to grasp the nuances of working with external data sources.
+
+This project utilizes the ASP.NET Framework, developed within the environment of Visual Studio 2019, along with the Bootstrap Framework for crafting the user interface. For the backend, we employ C# and leverage the HTTPClient from RapidAPI to establish communication with the IMDB API, thereby extracting comprehensive movie details..
 
 ## Features
 
